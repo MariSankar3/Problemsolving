@@ -1,0 +1,124 @@
+//43 string functions
+#include <stdio.h>
+int xstrlen();       //length of the string
+char xupper();      //to uppercase
+char xlower();      //tolower
+char swapcase();    //swapcase
+int xisalnum();     //num or int 10
+void slice();       //slicing string
+int xisspace();     //space 0 or 1
+int startwith();    //startwith 0 or 1    
+int rightindex();   //rightelement index
+
+int main()
+{
+    char a[10];
+ printf("enter your name: ");
+ scanf("%s",a);
+ 
+ int len = xstrlen(a);
+ printf("Length of string %d\n",len);
+ 
+ xupper(a);
+ printf("upper case is %s\n",a);
+ 
+ xlower(a);
+ printf("lower case is %s\n",a);
+
+ swapcase(a);
+printf("Swapping Case %s\n",a);
+
+int num = xisalnum(a);
+printf("Isalnum is %d\n",num);
+
+printf("slice from 3 to 6");
+slice(a,3,6);
+
+int sp = xisspace(a);
+printf("Is space(0) %d\n",sp);
+
+/*char f=a[0];
+int st = startwith('m',f);
+printf("starts with %d",st);*/
+
+}
+
+
+int xstrlen(char *str){    //length function
+    int count=0;
+    while(*str!='\0'){
+        count++;
+        str++;
+    }
+    return count;
+}
+
+
+char xupper(char *str){  //upper function
+    char *p=str;
+    while(*p!='\0'){
+        *p&=~(1<<5);
+        *p++;
+    }
+    return *str;
+}
+
+
+char xlower(char *str){
+    char *p=str;
+    while(*p!='\0'){
+        *p|=(1<<5);
+        *p++;
+    }
+    return *str;
+}
+
+
+char swapcase(char *str){
+    char *p=str;
+    while(*p!='\0'){
+        if(~(*p)&(1<<5))
+        *p|=(1<<5);
+        else if(*p&(1<<5))
+        *p&=~(1<<5);
+        *p++;
+    }
+    return *str;
+}
+
+
+int xisalnum(char *str){
+    while(*str!='\0'){
+    if((*str>='a' && *str<='z') || (*str>='1' && *str<='9')){
+        str++;
+        continue;
+    }return 0;
+        
+    }return 1;
+}
+
+
+void slice(char *str, int start, int end) {
+    int length = 0;
+    while (str[length] != '\0') {
+        length++;
+    }
+    for (int i = start; i <= end; i++) {
+        printf("%c\n", str[i]);
+    }
+}
+
+
+int xisspace(char *str){
+    if(*str=='\t' || *str=='\n' || *str=='\r' || *str=='\v')
+    return 0;
+    return 1;
+}
+
+
+/*int starts(char s,char f){
+    if(f==s)
+    return 0;
+    return 1;
+}*/
+
