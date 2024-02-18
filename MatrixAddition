@@ -1,0 +1,26 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+int r,c, a[100][100],b[100][100],sum[100][100],i,j;
+printf("Enter the number of rows(between 1 and 100):");
+scanf("%d",&r);
+printf("Enter the number of columns(between 1 and 100):");
+scanf("%d",&c);
+printf("/nEnter elements of 1st matrix:/n");
+for(i=0; i<r; i++)
+for(j=0; j<c; j++)
+{
+printf("Enter element a%d%d:",i,j);
+scanf("%d",&a[i][j]);
+}
+}
+
