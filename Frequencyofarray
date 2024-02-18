@@ -1,0 +1,35 @@
+/***
+ Given an array of positive integers. The output should be the number of occurrences of each number.
+Example:
+Input: {2, 3, 2, 6, 1, 6, 2}
+Output:
+1 – 1
+2 – 3
+3 – 1
+6 – 2
+****/
+#include<stdio.h>
+int main(){
+    int a[]={2,3,2,6,1,6,2};
+    int len = sizeof(a)/sizeof(int);
+    int fr[len];
+    int visited=-1;
+    
+    for(int i=0;i<len;i++){
+        int count=1;
+        for(int j=i+1;j<len;j++){
+            if(a[i]==a[j]){
+                count++;
+                fr[j]=visited;
+            }
+        }
+        if(fr[i]!=visited){
+            fr[i]=count;
+        }
+    }
+    for(int i=0;i<len;i++){
+        if(fr[i]!=visited)
+        printf("%d - %d \n",a[i],fr[i]);
+    }
+}
+
