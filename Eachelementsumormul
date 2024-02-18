@@ -1,0 +1,44 @@
+/******************************************************************************
+
+/*
+Given an array of integers, compute the maximum value for each integer in the index, 
+by either summing all the digits or multiplying all the digits.
+(Choose which operation gives the maximum value)
+•	Input:
+•	5
+•	120 24 71 10 59
+•	Output:
+•	3 8 8 1 45
+**/
+
+#include <stdio.h>
+
+int main() {
+    int a[] = {120, 24, 71, 10, 59};
+    int l = sizeof(a) / sizeof(int);
+    int c[l];
+    int m=0;
+    for (int i = 0; i < l; i++) {
+        int n = a[i];
+        int sum = 0;
+        int mul = 1;
+        
+        while (n != 0) {
+            int digit = n % 10;
+            sum += digit;
+            mul *= digit;
+            n /= 10;
+        }
+        if(sum<mul)
+        m=mul;
+        else
+        m=sum;
+         c[i]=m;
+    }
+    
+    for (int i = 0; i < l; i++) {
+        printf("%d ", c[i]);
+    }
+    
+    return 0;
+}
