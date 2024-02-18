@@ -1,0 +1,29 @@
+/*
+find the type of array 
+even or odd or mixed
+
+1 2 3 4 5
+Mixed
+**/
+#include <stdio.h>
+
+int main()
+{
+    int a[]={1,3,5,7,9};
+    int ev=0,od=0;
+    int len = sizeof(a)/sizeof(int);
+    for(int i=0;i<len;i++){
+        if(a[i]%2==0)
+            ev=ev+1;
+        else
+           od=od+1;
+    }if(ev==len)
+    printf("It is even array");
+    else if(od==len)
+    printf("It is odd array");
+    else
+    printf("It is mixed array");
+
+    return 0;
+}
+
