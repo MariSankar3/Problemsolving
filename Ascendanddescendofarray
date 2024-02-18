@@ -1,0 +1,39 @@
+/*
+.sort the array odd numbers in ascending and even numbers in descending.
+I/p 5 8 11 6 2 1 7
+O/p 1 5 7 11 8 6 2
+******/
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int a[] = {5, 8, 11, 6, 2, 1, 7};
+    int len = sizeof(a) / sizeof(int);
+    int b[20];
+    for (int i = 0; i < len - 1; i++) {
+        for (int j = i + 1; j < len; j++) {
+            // Sort odd numbers in ascending order
+            if (a[i] % 2 != 0 && a[j] % 2 != 0 && a[i] > a[j]) {
+                swap(&a[i], &a[j]);
+            }
+            // Sort even numbers in descending order
+            else if (a[i] % 2 == 0 && a[j] % 2 == 0 && a[i] < a[j]) {
+                swap(&a[i], &a[j]);
+            }
+        }
+    }
+
+    // Printing the sorted array
+    for (int i = 0; i < len; i++) {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
