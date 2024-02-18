@@ -1,0 +1,37 @@
+/*
+second small element in array
+*/
+
+#include <stdio.h>
+void sort(int arr[], int n)
+{
+int i, j;
+for (i = 0; i < n-1; i++)
+{
+for (j = i+1; j < n; j++)
+{
+if (arr[j] < arr[i])
+{
+int temp = arr[j];
+arr[j] = arr[i];
+arr[i] = temp;
+}
+}
+}
+}
+
+int main()
+{
+int n,i;
+printf("\nEnter the number of elements : ");
+scanf("%d",&n);
+int arr[n];
+printf("\nInput the array elements : ");
+for(i = 0; i < n; i++)
+{
+scanf("%d",&arr[i]);
+}
+sort(arr, n);
+printf("\nThe second smallest element is %d \n",arr[1]);
+return 0;
+}
