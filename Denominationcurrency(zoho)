@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int amount = sc.nextInt();
+
+        if (amount > 2000) {
+            int rem = amount % 2000;
+            System.out.println("Currency Count:");
+            System.out.println("2000 : " + amount / 2000);
+            method(rem);
+        } else {
+            System.out.println("Currency Count:");
+            method(amount);
+        }
+    }
+
+    // Method to print the count of denominations for the remaining amount
+    public static void method(int amount) {
+        int[] denominations = { 500, 200, 100, 50, 20, 10, 5, 1 };
+
+        for (int d : denominations) {
+            if (amount >= d) {
+                int count = amount / d;
+                System.out.println(d + " : " + count);
+                amount %= d;
+            }
+        }
+    }
+}
