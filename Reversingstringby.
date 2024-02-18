@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+/*Input:
+S = i.like.this.program.very.much
+Output: much.very.program.this.like.i
+Explanation: After reversing the whole
+string(not individual words), the input
+string becomes
+much.very.program.this.like.i*/
+int main() {
+    char s[] = "like.this.code";
+    int len = strlen(s);
+    char str[10][10];
+    int l = 0;
+    int j = 0;
+    for (int i = 0; i <= len; i++) {
+        if (s[i] != '.' && s[i] != '\0') {
+            str[l][j] = s[i];
+            j++;
+        } else {
+            str[l][j] = '\0';
+            l++;
+            j = 0; 
+        }
+    }
+    for (int i = l - 1; i >= 0; i--) {
+        printf("%s.", str[i]);
+    }
+
+    return 0;
+}
+
