@@ -1,0 +1,16 @@
+// binary number to decimal number 11011011
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        int sum=0;
+        int j=0;
+        for(int i=a.length()-1;i>=0;i--){
+            int dig = Character.getNumericValue(a.charAt(i));
+            sum+=dig*Math.pow(2,j);
+            j++;
+        }
+        System.out.println(sum);
+    }
+}
