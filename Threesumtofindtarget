@@ -1,0 +1,47 @@
+/**\
+Given a 6 blocks, of different height h1, …, h6 .
+Make 2 towers using 3 Blocks for each tower in desired height h1, h2.
+Print the blocks to be used in ascending order
+Input:
+1 2 5 4 3  6
+height of tower: 6 15
+Output :
+1 2 3 & 4 5 6
+
+**/
+#include <stdio.h>
+
+int main()
+{
+   int a[]={1,2,5,4,3,6};
+   int h=0,k=0,rem=0;
+   printf("heigth of tower: ");
+   scanf("%d",&h);
+   int len=sizeof(a)/sizeof(int);
+   int sum=0;
+   int b[20];
+   int x=0,y=1;
+   int c=1;
+   while(y<len){
+           b[0]=a[x];
+           b[1]=a[y];
+           sum=a[x]+a[y];
+           rem=h-sum;
+           for(int i=0;i<len;i++){
+           if(rem==a[i]){
+               b[2]=a[i];
+               c=0;
+               break;
+           }
+           }if(c==1){
+           ++x;
+           ++y;
+           }
+           else if(c==0){
+           break;}
+   }
+   for(int i=0;i<3;i++){
+       printf("%d ",b[i]);
+   }
+   }
+
