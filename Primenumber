@@ -1,0 +1,23 @@
+/**
+Given number is prime number or not
+it must divide by itself and 1
+**/
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter number :");   //19
+    scanf("%d",&n);                
+    for(int i=2;i<n/2;i++){   //2 3 4 5 6 7 8 9
+        if(n%i==0){            //19/2==1   indicate it is not prime number
+        break;    
+        }
+    }if(n>n/2)                  //19>1
+    printf("Prime number");
+    else
+    printf("Not a prime number");
+    return 0;
+}
+
