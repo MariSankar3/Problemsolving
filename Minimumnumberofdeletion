@@ -1,0 +1,39 @@
+/**
+Input : aebcbda
+Output : 2
+Remove characters 'e' and 'd'
+Resultant string will be 'abcba'
+which is a palindromic string
+Input : geeksforgeeks
+Output : 8
+**/
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char s[]="geeksforgeeks"; //a
+    int len = strlen(s);
+    int st=0;
+    int en=len-1;
+    int count=0;
+    while(st<en){
+        if(s[st]==s[en]){
+            st++;
+            en--;
+            continue;
+        }
+        else if(s[st]!=s[en]){
+            count++;
+            en--;
+        }
+         if(s[st]!=s[en]){
+             count++;
+             st++;
+         }
+        } printf("%d",count);
+    }
+   
+
+    
+
+
