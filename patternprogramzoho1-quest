@@ -1,0 +1,36 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+  //odd letters only allowed
+  //input PROGRAM
+/* P         M
+    R      A
+      O  R
+        G
+     O    R
+   R       A
+  P          M */
+  import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+       String a = sc.next();
+       if(a.length()%2==0){
+           System.out.println("Could not do pattern for this");
+       }
+       else{
+           int len = a.length();
+           for(int i=0;i<len-1;i++){
+               for(int j=0;j<len-1;j++){
+                   if(i==j || j==len-1-i){
+                       System.out.print(a.charAt(i)+" ");
+                       
+                   }
+                   else{
+                       System.out.print(" ");
+                   }
+               }
+               System.out.println();
+           }
+       }
+    }
+}
