@@ -1,0 +1,32 @@
+/******************************************************************************
+   <”luke”, “shaw”>
+  <”wayne”, “rooney”>
+  <”rooney”, “ronaldo”> if ronaldo father his child is rooney have a two child wayne and shaw
+  <”shaw”, “rooney”>    so output 2
+   child,father
+*******************************************************************************/
+
+public class Main
+{
+	public static void main(String[] args) {
+	String a[][]={{"luke","shaw"}
+	            ,{"wayne","rooney"}
+	            ,{"rooney","ronaldo"}
+	            ,{"shaw","rooney"}};
+	            
+   String t = "ronaldo";
+ int count=0;
+       for(int i=0;i<a.length;i++){
+               if(t.equals(a[i][1])){
+                 String child=a[i][0];
+                 for(int j=0;j<a.length;j++){
+                     if(child.equals(a[j][1])){
+                         count++;
+                     }
+                 }}
+               
+           }
+           System.out.println(count);
+       }
+   }
+	
