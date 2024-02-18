@@ -1,0 +1,17 @@
+/**
+Automorphic number 
+5 =25 lastdigit same
+***/
+#include<stdio.h>
+int main()
+{
+	int N;
+	scanf("%d",&N);
+	int sq = N*N;
+	int last = sq%10;
+	if(last == N){
+	    printf("It is Automorphic number");
+	}else
+	printf("Noot Automorphic");
+	return 0;
+}
