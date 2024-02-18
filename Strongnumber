@@ -1,0 +1,32 @@
+/**
+given number is strongnumber or not
+145 = 1!+4!+5! = 1+16+25 = 145;
+**/
+#include <stdio.h>
+int fact(int n){
+    if(n==0)
+    return 1;
+    return n*fact(n-1);
+}
+
+int main()
+{
+    int n;
+    printf("Enter number :");
+    scanf("%d",&n);
+    int n1=n;
+    int tot=0;
+    int digit;
+    while(n!=0){
+        digit = n%10;
+       tot += fact(digit);
+        n=n/10;
+    }
+    if(tot==n1){
+        printf("It is strong number");
+    }
+    else
+    printf("It is not strong number");
+    return 0;
+}
+
