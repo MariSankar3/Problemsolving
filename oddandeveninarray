@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+void func(char a[]) {
+    char od[20];
+    char ev[20];
+    int j = 0, k = 0;
+    for (int i = 0; i < strlen(a); i++) {
+        if (i % 2 == 0) {
+            ev[j++] = a[i];
+        } else {
+            od[k++] = a[i];
+        }
+    }
+    ev[j] = '\0'; // Null-terminate the even array
+    od[k] = '\0'; // Null-terminate the odd array
+    printf("%s %s\n", ev, od);
+}
+
+int main() {
+    int n;
+    char a[50];
+    printf("Enter number: ");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        printf("Enter string %d: ", i + 1);
+        scanf("%s", a);
+        func(a);
+    }
+    return 0;
+}
+
