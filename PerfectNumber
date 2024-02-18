@@ -1,0 +1,25 @@
+/*
+given number perfect number or not 
+6 = 1+2+3=6
+**/
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    int sum=0;
+    printf("Enter number :");
+    scanf("%d",&n);
+    for(int i=1;i<n;i++){
+        if(n%i==0){
+            sum+=i;
+        }
+    }
+    if(sum==n)
+    printf("It is perfect number");
+    else 
+    printf("It is not perfect numberr");
+
+    return 0;
+}
+
