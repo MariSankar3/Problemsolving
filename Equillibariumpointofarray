@@ -1,0 +1,30 @@
+/******************************************************************************
+
+1-- Equilibrium index of an array is an index such that the sum of elements at lower indexes is equal to the sum of elements at higher indexes. For example, in an array A:
+Example :
+Input: A[] = {-7, 1, 5, 2, -4, 3, 0}
+Output: 3
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int a[]={-7,1,5,2,-4,3,0};
+    int l=sizeof(a)/sizeof(int);
+    int suml=0;
+    int  tot=0;
+    int sumr=0;
+    int eq=0;
+    for(int i=0;i<l;i++){
+        tot+=a[i];
+    }for(int i=0;i<l;i++){
+        sumr=tot-suml-a[i];
+        if(sumr==suml){
+            eq=i;
+            break;
+        }suml+=a[i];
+    }
+    printf("%d",eq);
+    }
+
