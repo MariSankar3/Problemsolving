@@ -1,0 +1,32 @@
+/**
+ 1 2 3 4
+4 2 3 4
+
+both are equal
+****/
+#include <stdio.h>
+
+int main()
+{
+    int a[]={1,2,3,4};
+    int b[]={4,2,3,1};
+    int len1 = sizeof(a)/sizeof(int);
+    int len2 = sizeof(b)/sizeof(int);
+    if(len1!=len2)
+    printf("It is not same array");
+    int c=0;
+    for(int i=0;i<len1;i++){
+     int num = a[i];
+     for(int j=0;j<len2;j++){
+         if(b[j]==num){
+             c++;
+         }
+     }
+    }
+    if(c==len1)
+    printf("Both array are same");
+    else 
+    printf("It is not same array");
+}
+
+
