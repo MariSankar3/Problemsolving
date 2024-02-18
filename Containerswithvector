@@ -1,0 +1,33 @@
+/******************************************************************************
+
+STL - Standard template Library
+Containers - Sequence Containers(vector,Deque,list,Arrays) - Sequence Manner
+             Associative Containers(Set,Multiset,Map,Multimap) - Quick searched
+             Container Adapter(Stack,Queue)
+
+vector - Dynamic Arrays(size)
+         Ability to resize
+         Contigous memory locations
+*******************************************************************************/
+
+#include<bits/stdc++.h>
+  using namespace std;
+int main()
+{ 
+  vector<int>v1;
+  v1.push_back(5);
+  v1.push_back(4);
+  v1.push_back(3);
+  v1.push_back(2);
+  v1.pop_back(); //last element pop_back
+  v1.insert(v1.begin(),8);   //insert element at begin or end()
+  v1.erase(v1.begin()+1);  //erase at begin or end
+  cout<<v1.at(0)<<"\n"; //index 2 value
+  cout<<v1.size(); //size of vector
+  cout<<v1.empty(); // no empty 0 or empty 1
+  v1.clear();    //clearing all the datas
+  cout<<v1.empty();
+ for(int a : v1)
+ cout<<a;
+}
+
