@@ -1,0 +1,26 @@
+/**
+ array of numbers were given to find a number which has same sum of numbers in it’s either side.
+I/p 1, 2, 3, 7, 6
+O/p 7(has 1+ 2+3 in left 6 in right)
+**/
+#include <stdio.h>
+
+int main()
+{
+    int a[]={1, 2, 3, 7, 6};
+    int len=sizeof(a)/sizeof(int);
+    int suml=0,sumr=0,tot=0,eq=0;
+    for(int i=0;i<len;i++){
+        tot+=a[i];
+    }for(int i=0;i<len;i++){
+        sumr=tot-suml-a[i];
+        if(sumr==suml){
+            eq=a[i];
+            break;
+        }
+        suml+=a[i];
+    }printf("%d ",eq);
+
+    return 0;
+}
+
